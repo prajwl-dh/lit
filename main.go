@@ -17,7 +17,7 @@ func main() {
 
 	switch os.Args[1] {
 	case "help":
-		logger.PrintInfo("Command: ./lit init    Usage: Initialize the repository\n")
+		logger.PrintInfo("\n- Command: ./lit init    Usage: Initialize the repository\n")
 		fmt.Println()
 		os.Exit(0)
 

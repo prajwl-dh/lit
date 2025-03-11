@@ -25,4 +25,9 @@ go.work.sum
 lit
 
 #temp folder
+temp
 temp/
+
+#.lit directory
+.lit
+.lit/
