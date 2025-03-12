@@ -17,13 +17,13 @@ func Init() error {
 	subDirs := []string{
 		"objects",
 		"refs/heads",
-		"refs/tags",
 	}
 
 	files := map[string]string{
-		"HEAD":   "ref: refs/heads/main\n",
-		"config": "[core]\n\trepositoryformatversion = 0\n",
-		"index":  "",
+		"HEAD":            "ref: refs/heads/main\n",
+		"config":          "[core]\n\trepositoryformatversion = 0\n",
+		"index":           "",
+		"refs/heads/main": "",
 	}
 
 	// Create main `.lit` directory
