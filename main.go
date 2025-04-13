@@ -17,12 +17,20 @@ func main() {
 
 	switch os.Args[1] {
 	case "help":
-		logger.PrintInfo("\n- Command: ./lit init    Usage: Initialize the repository\n")
+		logger.PrintInfo("\n- Command: ./lit init	Usage: Initialize the repository\n")
+		logger.PrintInfo("\n- Command: ./lit add	Usage: Adds the changes to staging area\n")
 		fmt.Println()
 		os.Exit(0)
 
 	case "init":
 		if err := cmd.Init(); err != nil {
+			logger.PrintError("Error: %v\n", err)
+			fmt.Println()
+			os.Exit(1)
+		}
+
+	case "add":
+		if err := cmd.Add(); err != nil {
 			logger.PrintError("Error: %v\n", err)
 			fmt.Println()
 			os.Exit(1)

@@ -66,6 +66,21 @@ func Init() error {
 		}
 	}
 
+	// Create litignore file
+	litignoreTemplate := ".git\n.gitignore\n.lit\n.litignore\nlit\n"
+
+	if _, err := os.Stat(".litignore"); os.IsNotExist(err) {
+		if err := os.WriteFile(".litignore", []byte(litignoreTemplate), 0644); err != nil {
+			logger.PrintError("Error creating .litignore file")
+			fmt.Println("Error Message: ", err)
+			fmt.Println()
+			os.Exit(1)
+		}
+	} else {
+		logger.PrintInfo("\n.litignore already exists. Skipping creation.\n")
+		fmt.Println()
+	}
+
 	logger.PrintSuccess("Initialized empty Lit repository in: %v\n\n", litDir)
 
 	return nil
